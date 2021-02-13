@@ -32,6 +32,14 @@ app.get('/dogs', function(req, res) {
     res.render('pages/dogs');
 });
 
+app.get('/movies', function(req, res) {
+    res.render('pages/movies');
+});
+
+app.get('/tvshows', function(req, res) {
+    res.render('pages/tvshows');
+});
+
 // upLoadData page 
 // sending a get with 1 param
 // http://localhost:3000/uploadData?id=2
