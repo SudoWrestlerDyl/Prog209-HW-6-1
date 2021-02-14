@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ../partials/head %>
 </head>
+
 <body class="container">
 
-<header>
-    <% include ../partials/header %>
-</header>
+    <header>
+        <% include ../partials/header %>
+    </header>
 
-<h3>My favorite Movies</h3>
+    <h3>My favorite Movies</h3>
+    <h4>
+        <ul>
+            <li><%= movielist[0] %></li>
+            <li><%= movielist[1] %></li>
+            <li><%= movielist[2] %></li>
+            <li><%= movielist[3] %></li>
+        </ul>
+    </h4>
+
     <footer>
         <% include ../partials/footer %>
     </footer>
-    
-    </body>
-    </html>
+
+</body>
+
+</html>

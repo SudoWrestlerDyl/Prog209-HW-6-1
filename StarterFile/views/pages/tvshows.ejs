@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <% include ../partials/head %>
 </head>
+
 <body class="container">
 
     <header>
         <% include ../partials/header %>
     </header>
-    
+
     <h3>My favorite TV Shows</h3>
-        <footer>
-            <% include ../partials/footer %>
-        </footer>
-        
-        </body>
-        </html>
+    <h4>
+        <ul>
+            <li><%= tvshowslist[0] %></li>
+            <li><%= tvshowslist[1] %></li>
+            <li><%= tvshowslist[2] %></li>
+            <li><%= tvshowslist[3] %></li>
+        </ul>
+    </h4>
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+
+</body>
+
+</html>

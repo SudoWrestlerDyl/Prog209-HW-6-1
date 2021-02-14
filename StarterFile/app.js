@@ -18,48 +18,55 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // use res.render to load up an ejs view file
 // index page 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.render('pages/index');
 });
 
 // about page 
-app.get('/about', function(req, res) {
+app.get('/about', function (req, res) {
     res.render('pages/about');
 });
 
-// about page 
-app.get('/dogs', function(req, res) {
+// dogs page 
+app.get('/dogs', function (req, res) {
     res.render('pages/dogs');
 });
 
-app.get('/movies', function(req, res) {
-    res.render('pages/movies');
+// movies page
+app.get('/movies', function (req, res) {
+    let movieArray = ["IRobot", "Mr Popper's Penguins", "Jurassic Park", "Back to the Future"];
+    res.render('pages/movies', {
+        movielist: movieArray
+    });
 });
 
-app.get('/tvshows', function(req, res) {
-    res.render('pages/tvshows');
+// tvshows page
+app.get('/tvshows', function (req, res) {
+    let tvshowsArray = ["Parks and Recreation", "The Office", "Brooklyn99", "The Three Stooges"];
+    res.render('pages/tvshows', {
+        tvshowslist: tvshowsArray
+    });
 });
 
 // upLoadData page 
 // sending a get with 1 param
 // http://localhost:3000/uploadData?id=2
-app.get('/uploadData', function(req, res) {
+app.get('/uploadData', function (req, res) {
     let idVar = req.param('id');
     let msgVar = req.param('msg');
     // passing an object, used like a dictionary, to the render code
-    res.render('pages/uploadData', { 
+    res.render('pages/uploadData', {
         value1PassedToRenderPage: idVar,
         value2PassedToRenderPage: msgVar
-     });
-  });
-
+    });
+});
 
 
 // error page 
-app.get('/error', function(req, res) {
+app.get('/error', function (req, res) {
     // should get real data from some real operation, but instead ...
     let message = "some text from someplace";
-    let errorObject ={
+    let errorObject = {
         status: "this is real bad",
         stack: "somebody called #$% somebody who called somebody <awful>"
     };
